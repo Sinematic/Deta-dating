@@ -1,0 +1,129 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: auto;
+    width: 80%;  
+}
+
+.container {
+    width:100%;
+    padding: 2em;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 1em;
+    background-image : url("https://ih1.redbubble.net/image.2441584675.1132/flat,128x128,075,t-pad,128x128,f8f8f8.jpg");
+}
+
+h1 {
+    color: #491948; /*REPLACE COLORS*/
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+h1::first-letter {
+    font-size: 1.25em;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input::placeholder {
+    font-weight: 100;
+}
+
+input[type=submit] {
+    margin-top: -1px;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+
+#form {
+    width: 30%;
+    border: 2px #491948 solid;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #f48a73; /*REPLACE COLORS*/
+    padding-bottom: 2em;
+    border-radius: 0% 0% 10% 10%;
+}
+
+#profile {
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+#profile h1 {
+    margin: none;
+    display: inline;
+    padding-top: 0px;
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+    background-color: #f48a73;
+    font-size: 2.8em;
+    position: relative;
+    top: -2em;
+    left: 10.5em;
+    border-radius: 10%;
+    border: 0.05em #491948 solid;
+}
+
+#pic {
+    border : 0.2em #491948 solid;
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+
+#profile p {
+    width: 80%;
+    margin: auto;
+    padding-top: 0.4em;
+    padding-bottom: 0.6em;
+    background-color: wheat;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.reactions {
+    margin:auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reactions img {
+    position: relative;
+    border-radius: 60px;
+    bottom: 23em;
+    width: 120px;
+}
+
+a button  {
+    color : #491948;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    background-color: #F8C471;
+    padding: 0.4em;
+    border: 0.15em #491948 solid;
+    text-decoration:none;
+}
+
+header h1 {
+    background-color: wheat;
+    border: 0.07em #491948 solid;
+    padding: 0.1em;
+    width: 30%;
+    justify-content: center;
+    margin:auto;
+}
+
+header .specialtitle {
+    border-radius: 35% 35% 0% 0%;
+}
