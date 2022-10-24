@@ -14,7 +14,7 @@ recherches de profils en prenant en compte certains paramètres très précis!
 
 Voici une **première ébauche** de l'intégration du site:
 
-![](schema.png)
+![](project/schema.png)
 
 Au début, ce sera une **application web** qui pourrait être revue / adaptée au **format mobile.**
 
@@ -30,7 +30,7 @@ Niveau technologies:
 
 Un petit aperçu après une rapide intégration de la page de Swipe
 
-![](1.png)
+![](project/1.png)
 
 
 <br/>
