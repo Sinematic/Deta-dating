@@ -29,7 +29,7 @@ class Distance:
 
 try:
     # L'utilisateur doit donner son CP
-    loc1 = input("CP1") # remplacer par une requête SQL qui renvoie le CP de l'utilisateur
+    loc1 = input("CP1")  # remplacer par une requête SQL qui renvoie le CP de l'utilisateur
     
     # On crée une instance de Location
     glocation1 = Location(loc1)
@@ -53,5 +53,3 @@ try:
 except ValueError as e:
     print(f"T'as tout cassé \n {e}")
     
-
-

@@ -1,7 +1,9 @@
+"""
+
 import sys
 import csv
 import string
-from classes import user
+# from classes import user
 
 try:
     with open("../data/id.csv", "wt", encoding="UTF-8") as file:
@@ -14,4 +16,6 @@ except FileNotFoundError as e:
     sys.exit(1)
 
 user = user.User()
+
+"""
 

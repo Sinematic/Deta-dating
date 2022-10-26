@@ -32,6 +32,10 @@ class Location:
         return f"{self.getlocation()}"
 
 
+"""
+
 loc = Location("94410")
 position = loc.getlocation()
-#  print(position[1]) #  position[1] = city
+print(position[1]) #  position[1] = city
+
+"""

@@ -1,7 +1,7 @@
 class User:
 
     """
-    Prénom, Âge, Email, Sexe, Bio, Description, Type(ONS, FWB, Relation sérieuse, ...), Orientation
+    Prénom, Âge, Email, Sexe, Description, Type(ONS, FWB, Relation sérieuse, ...), Orientation
     # Hobbies, critères physiques (taille/poids)
     """
 
@@ -9,16 +9,16 @@ class User:
     age = ""
     mail = ""
     gender = "Non spécifié"
-    bio = ""
+    description = ""
     expectations = ""
 
-    def __init__(self, firstname, age, mail, gender, bio, expectations, orientation):
+    def __init__(self, firstname, age, mail, gender, description, expectations, orientation):
 
         self.firstname = firstname
         self.age = int(age)
         self.mail = mail
         self.gender = gender
-        self.bio = bio
+        self.description = description
         self.orientation = orientation
         self.expectations = expectations
 
@@ -27,7 +27,3 @@ class User:
                f"j'ai {self.age} ans, " \
                f"genre : {self.gender}"
 
-
-
-# je récupère les infos en db de l'utilisateur
-#
