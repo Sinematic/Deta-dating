@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,29 +20,27 @@
             <div id="form" class="form-group d-flex justify-content-center">
 
                 <form action="../python/connect.py" method="post">
-    
+
                     <div class="form-group">
-                        <input class="form-control form-control-lg" type="email" name="mail" placeholder="Mail">
-                        <input class="form-control form-control-lg" type="password" name="password" placeholder="Mot de passe">
-                        <input class="form-control btn btn-secondary-lg text-center bg-light" type="submit" value="Se connecter">
+                        <input class="form-control form-control-lg" type="email" name="username" placeholder="Mail" required>
+                        <input class="form-control form-control-lg" type="password" name="password" placeholder="Mot de passe" required>
+                        <input class="form-control form-control-lg" type="number" min="13" max="101" step="1" name="age" required>
+                        <input class="form-control btn btn-secondary-lg text-center bg-light" type="submit" value="S'inscrire">
                     </div>
 
                 </form>
 
             </div>
-
             <div class="form-group d-flex justify-content-center">
-
                 <p class="special">
-                    <a href="http://localhost:63342/swipe/html/signup.html?_ijt=injondfo1al0mt4o0svthc4jn3&_ij_reload=RELOAD_ON_SAVE">
-                        <button class="form-control btn btn-secondary-lg text-center bg-light">S'inscrire</button>
+                    <a href="http://localhost:63342/swipe/html/login.html?_ijt=injondfo1al0mt4o0svthc4jn3&_ij_reload=RELOAD_ON_SAVE">
+                        <button class="form-control btn btn-secondary-lg text-center bg-light">Se connecter</button>
                     </a>
                 </p>
-
             </div>
 
     </div>
-   
+
 
 </body>
 </html>

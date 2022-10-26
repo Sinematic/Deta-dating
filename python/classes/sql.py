@@ -1,36 +1,21 @@
 import sqlite3
+import database
 
 """
-"CREATE Table IF NOT EXISTS users(user_id integer primary key autoincrement, firstname text, email text, password, " \
-                "orientation, expectations, description text, age integer, age, zipcode, gender)"
+
 "ALTER TABLE users ADD zipcode" # ajoute une catégorie
 
-
-query = "INSERT INTO users (firstname, email, password, orientation, description, age, gender) " \
-        "VALUES ('Maxime', 'sine@sine.com', 'sine', '0', 'Salut je suis le plus beau', 26, '1') "
-
 """
 
-try:
-    cnx = sqlite3.connect('users.db')
-    cursor = cnx.cursor()
-    email = "sine@sine.com"
-    cursor.execute(f"SELECT * FROM users WHERE email = 'sie@sine.com'")
-    user = cursor.fetchall()
-    if user:
-        print('Adresse e-mail déjà utlisée')
-    else:
-        print('Adresse e-mail disponible')
+db = database.Database()
+db.createdbusers()
+db.feedusers()
+mail = db.searchmail('sine @ sine.com')
+if mail:
+    print("Mail utilisé")
+else:
+    print("Mail disponible")
 
-    query = "INSERT INTO users (firstname, email, password, orientation, description, age, gender) " \
-            "VALUES ('Lady Gaga', 'lady@gaga.com', 'gaga', '2', 'Super star', 25, '0') "
-
-    #cursor.execute(query)
-    #cnx.commit()
-    cnx.close()
-
-except BaseException as e:
-    print(f" Erreur ! {e}")
 
 # query = "INSERT INTO Users (firstname, email, description, age) values " \
 # "(User.firstname, User.email, User.description, User.age)"
