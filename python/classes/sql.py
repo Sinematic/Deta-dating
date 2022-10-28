@@ -41,19 +41,21 @@ except BaseException as e:
 # SELECT //  Donne moi les utilisateurs qui correspondent à crit age, orientation,
 # results -> distance (si oui : ->retour html)
 
- def searchmatch(self, age, orientation):
+
+ #gender if
+def searchmatch(self, age, orientation):
         self.dbconnect()
-        return self.cursor.execute(f"SELECT * FROM users WHERE age = {age}, {orientation}")
+        return self.cursor.execute(f"SELECT * FROM users WHERE age = '{age}' AND orientation = '{orientation}'")
 
 
-set_ = """# modifier son profil, update set -> """
+ """# modifier son profil, update set -> """
 
 
-def updateuser(self):
+def updateuser(self, firstname, email, orientation, expectations, description, age, zipcode, gender):
 
         self.dbconnect()
-        self.cursor.execute(f"UPDATE users SET firstname = {firstname}, email ={email}, password = {password},  \
-                         orientation = {orientation}, expectations = {expectation}, description = {description}  \
+        self.cursor.execute(f"UPDATE users SET firstname = {firstname}, email ={email},  \
+                         orientation = {orientation}, expectations = {expectations}, description = {description}  \
                          age = {age}, zipcode = {zipcode}, gender = {gender}")
         self.cnx.commit()
         self.cnx.close()
@@ -61,7 +63,7 @@ def updateuser(self):
 
 
 # update ex: bio
-# chercher les valeurs établies par l'utilisateur
+# chercher les valeurs établies par l'utilisateur/ok
 
 # form qui donne des données, on fait la comparaison mail + pw
 # si correspondance :
