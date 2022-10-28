@@ -12,11 +12,11 @@ class User:
     description = ""
     expectations = ""
 
-    def __init__(self, firstname, age, mail, gender, description, expectations):
+    def __init__(self, mail, age, firstname='', gender='', description='', expectations=''):
 
         self.firstname = firstname
-        self.age = int(age)
         self.mail = mail
+        self.age = int(age)
         self.gender = gender
         self.description = description
         self.expectations = expectations

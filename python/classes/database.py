@@ -1,6 +1,7 @@
 import sqlite3
 from user import User
 
+
 class Database:
 
     def __init__(self, dbname='users.db'):
@@ -57,9 +58,9 @@ class Database:
         result = test.fetchone()
 
         if len(result) == 0:
-            return False
+            return False  # Utilisateur non reconnu
         else:
-            return True
+            return True  # Utilisateur reconnu
 
     def retrievedata(self, email, password):
         self.dbconnect()
@@ -82,13 +83,22 @@ class Database:
             self.cnx.commit()
             self.cnx.close()
             print("Utilisateur ajouté à la base de données")
+            return User(mail=email, age=age)
 
+    def deleteuser(self, user_id):
+        self.dbconnect()
+        self.cursor.execute(f"DELETE FROM users WHERE user_id = {user_id}")
+        self.cnx.commit()
+        self.cnx.close()
+
+    def updateuser(self, ):
 
 
 db = Database()
 db.dbconnect()
-email = "sine@sile.com"
-password = 'sine'
-age = 25
-# newuser = db.createuser(email, password, age)
 
+mail = 'sine@siklhe.com'
+password = 'sine'
+age = 26
+
+db.deleteuser(20)
