@@ -2,21 +2,21 @@ import sqlite3
 import database
 
 """
-
 "ALTER TABLE users ADD zipcode" # ajoute une catégorie
-
 """
+
 db = database.Database()
 db.dbconnect()
-available = db.searchmail('sine@sine.com')
 
-if available == []:
-    print('Dispo')
+if db.searchmail('sine@sine.com'):
+    print("Adresse e-mail utilisée")
+else:
+    print("Adresse e-mail disponible")
+
+
 
 # query = "INSERT INTO Users (firstname, email, description, age) values " \
 # "(User.firstname, User.email, User.description, User.age)"
-
-# loginquery = "SELECT * FROM Users WHERE email = ?, password = ?"
 
 
 # SELECT //  Donne moi les utilisateurs qui correspondent à crit age, orientation,

@@ -47,9 +47,9 @@ class Database:
         result = test.fetchall()
 
         if len(result) == 0:
-            return False
+            return False  # Adresse e-mail disponible
         else:
-            return True
+            return True  # Adresse e-mail utilisée
 
     def login(self, email, password): # Retourne True si l'utilisateur est reconnu
         self.dbconnect()
@@ -69,17 +69,26 @@ class Database:
         if result:
             return User(result[1], result[8], result[2], result[4], result[7], result[5])
         else:
-            return "Utilisateur non trouvé"
+            return False
+
+    def createuser(self, email, password, age):
+        self.dbconnect()
+        result = db.retrievedata(email, password)
+
+        if result:
+            print("Adresse e-mail déjà utilisée")
+        else:
+            self.cursor.execute(f"INSERT INTO Users (email, password, age) values ('{email}', '{password}', '{age}')")
+            self.cnx.commit()
+            self.cnx.close()
+            print("Utilisateur ajouté à la base de données")
+
 
 
 db = Database()
 db.dbconnect()
-email = "sine@sine.com"
+email = "sine@sile.com"
 password = 'sine'
-co = db.login(email, password)
+age = 25
+# newuser = db.createuser(email, password, age)
 
-if co:
-    user = db.retrievedata(email, password)
-    print(f"Bonjour {user.firstname}")
-else:
-    print("Identifiants incorrects !")
