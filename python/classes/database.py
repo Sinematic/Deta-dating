@@ -1,5 +1,5 @@
 import sqlite3
-
+from user import User
 
 class Database:
 
@@ -36,11 +36,50 @@ class Database:
                        "VALUES ('Maxime', 'sine@sine.com', 'sine', '0', 'Salut je suis le plus beau', 26, '1'), \
                        ('Aurélie', 'aure@aure.com', 'aure', '1', 'Salut je suis la plus belle', 25, '0'), \
                        ('LadyGaga', 'lady@gaga.com', 'gaga', '2', 'Salut je suis une super star', 35, '0')"
-                       )
+                            )
+
         self.cnx.commit()
         self.cnx.close()
 
-    def searchmail(self, email):
+    def searchmail(self, email): # Retourne True si le mail est utilisé
         self.dbconnect()
-        return self.cursor.execute(f"SELECT * FROM users WHERE email = {email}")
+        test = self.cursor.execute(f"SELECT email FROM users WHERE email = '{email}'")
+        result = test.fetchall()
 
+        if len(result) == 0:
+            return False
+        else:
+            return True
+
+    def login(self, email, password): # Retourne True si l'utilisateur est reconnu
+        self.dbconnect()
+        test = self.cursor.execute(f"SELECT * FROM users WHERE email = '{email}' AND password = '{password}'")
+        result = test.fetchone()
+
+        if len(result) == 0:
+            return False
+        else:
+            return True
+
+    def retrievedata(self, email, password):
+        self.dbconnect()
+        test = self.cursor.execute(f"SELECT * FROM users WHERE email = '{email}' AND password = '{password}'")
+        result = test.fetchone()
+
+        if result:
+            return User(result[1], result[8], result[2], result[4], result[7], result[5])
+        else:
+            return "Utilisateur non trouvé"
+
+
+db = Database()
+db.dbconnect()
+email = "sine@sine.com"
+password = 'sine'
+co = db.login(email, password)
+
+if co:
+    user = db.retrievedata(email, password)
+    print(f"Bonjour {user.firstname}")
+else:
+    print("Identifiants incorrects !")

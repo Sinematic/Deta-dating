@@ -6,16 +6,12 @@ import database
 "ALTER TABLE users ADD zipcode" # ajoute une catégorie
 
 """
-
 db = database.Database()
-db.createdbusers()
-db.feedusers()
-mail = db.searchmail('sine @ sine.com')
-if mail:
-    print("Mail utilisé")
-else:
-    print("Mail disponible")
+db.dbconnect()
+available = db.searchmail('sine@sine.com')
 
+if available == []:
+    print('Dispo')
 
 # query = "INSERT INTO Users (firstname, email, description, age) values " \
 # "(User.firstname, User.email, User.description, User.age)"
@@ -37,3 +33,4 @@ else:
 
 # user_id
 # chat -> 2 user_id
+
