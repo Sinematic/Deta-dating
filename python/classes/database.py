@@ -83,15 +83,13 @@ class Database:
             self.cnx.commit()
             self.cnx.close()
             print("Utilisateur ajouté à la base de données")
-            return User(mail=email, age=age)
+            return User(email=email, age=age)
 
     def deleteuser(self, user_id):
         self.dbconnect()
         self.cursor.execute(f"DELETE FROM users WHERE user_id = {user_id}")
         self.cnx.commit()
         self.cnx.close()
-
-    def updateuser(self, ):
 
 
 db = Database()

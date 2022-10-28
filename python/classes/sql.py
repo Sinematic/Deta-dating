@@ -13,8 +13,6 @@ else:
     print("Adresse e-mail disponible")
 
 
-
-
 # SELECT //  Donne moi les utilisateurs qui correspondent à crit age, orientation,
 # results -> distance (si oui : ->retour html)
 

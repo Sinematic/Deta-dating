@@ -7,22 +7,26 @@ class User:
 
     firstname = ""
     age = ""
-    mail = ""
+    email = ""
     gender = "Non spécifié"
     description = ""
     expectations = ""
+    zipcode = ""
 
-    def __init__(self, mail, age, firstname='', gender='', description='', expectations=''):
+    def __init__(self, email, age, firstname='', gender='', description='', expectations='', zipcode=''):
 
         self.firstname = firstname
-        self.mail = mail
+        self.email = email
         self.age = int(age)
         self.gender = gender
         self.description = description
         self.expectations = expectations
+        self.zipcode = zipcode
 
     def __str__(self):
         return f"Je m'appelle {self.firstname}, " \
                f"j'ai {self.age} ans, " \
                f"genre : {self.gender}"
 
+
+    def getcity(self, zipcode):
