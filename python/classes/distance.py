@@ -29,21 +29,18 @@ class Distance:
 
 try:
     # L'utilisateur doit donner son CP
-    loc1 = input("CP1")  # remplacer par une requête SQL qui renvoie le CP de l'utilisateur
-    
+    loc1 = int(input("CP1"))  # remplacer par une requête SQL qui renvoie le CP de l'utilisateur
+    loc2 = int(input("CP2"))
     # On crée une instance de Location
     glocation1 = Location(loc1)
-    
     # On récupère un tuple contenant latitude et longitude
     m1 = glocation1.getlocation()[0]
-    print(glocation1, m1)
-    
-    loc2 = input("CP2")
+
     glocation2 = Location(loc2)
     m2 = glocation2.getlocation()[0]
-    
     # On crée une instance de Distance et on lui donne pour arguments
     # les positions des utilisateurs dont il faudra calculer l'éloignement
+
     getdist = Distance(m1, m2)
     
     # On calcule la distance entre les deux utilisateurs
@@ -52,4 +49,3 @@ try:
     
 except ValueError as e:
     print(f"T'as tout cassé \n {e}")
-    

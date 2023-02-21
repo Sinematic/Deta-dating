@@ -1,3 +1,6 @@
+from location import Location
+
+
 class User:
 
     """
@@ -5,28 +8,43 @@ class User:
     # Hobbies, critères physiques (taille/poids)
     """
 
-    firstname = ""
-    age = ""
-    email = ""
-    gender = "Non spécifié"
-    description = ""
-    expectations = ""
-    zipcode = ""
+    firstname = str
+    age = int
+    email = str
+    gender = int
+    orientation = int
+    description = str
+    expectations = int
+    zipcode = int
+    city = str
+    password = str
 
-    def __init__(self, email, age, firstname='', gender='', description='', expectations='', zipcode=''):
+    def __init__(self, email, age, firstname='', gender='', description='', expectations='', zipcode='', password='',
+                 orientation=''):
 
         self.firstname = firstname
         self.email = email
-        self.age = int(age)
+        self.age = age
         self.gender = gender
         self.description = description
         self.expectations = expectations
         self.zipcode = zipcode
+        self.password = password
+        self.orientation = orientation
 
     def __str__(self):
+
         return f"Je m'appelle {self.firstname}, " \
                f"j'ai {self.age} ans, " \
                f"genre : {self.gender}"
 
+    def getcity(self):
 
-    def getcity(self, zipcode):
+        __loc = Location(self.zipcode)
+        __loc.getcity()
+
+        """
+        __position = __loc.getlocation()
+        self.city = __position[1]
+        return self.city
+        """

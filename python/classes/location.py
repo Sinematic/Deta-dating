@@ -25,17 +25,13 @@ class Location:
         return self.location, self.city
 
     def getcity(self):
-        pass
+
+        __loc = Location(self.zipcode)
+        __position = __loc.getlocation()
+        self.city = __position[1]
+        return self.city
 
     def __str__(self):
 
         return f"{self.getlocation()}"
 
-
-"""
-
-loc = Location("94410")
-position = loc.getlocation()
-print(position[1]) #  position[1] = city
-
-"""
